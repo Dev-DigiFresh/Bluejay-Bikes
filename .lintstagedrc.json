@@ -1,0 +1,1 @@
+{ "*.js?(x)": ["yarn lint", "yarn format"] }

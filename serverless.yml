@@ -1,0 +1,5 @@
+bluejaybikes:
+  component: "@sls-next/serverless-component"
+  # inputs: 
+  #   cloudfront: 
+  #     distributionId: EUUOLI06JLE03

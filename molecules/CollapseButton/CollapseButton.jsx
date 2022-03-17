@@ -1,0 +1,31 @@
+import { Flex, Image, Text } from '@chakra-ui/react';
+import ArrowRight from 'public/arrowRight.png';
+
+const CollapseButton = ({ text, idAnalyticsName, url, last }) => (
+  <>
+    <Flex
+      alignItems="center"
+      justifyContent="space-between"
+      p="0 25px"
+      h="58px"
+      cursor="pointer"
+      borderBottom={last ? 'unset' : '2px'}
+      id-analytics-group="external-page"
+      id-analytics-name={idAnalyticsName}
+      href={url}
+      as="a"
+      target="_blank"
+      rel="noopener noreferrer"
+      w="100%"
+      fontWeight="600">
+      <Text textAlign="left" variant="text">
+        {text}
+      </Text>
+      <Text fontSize="20px" textAlign="right">
+        <Image src={ArrowRight} />
+      </Text>
+    </Flex>
+  </>
+);
+
+export default CollapseButton;

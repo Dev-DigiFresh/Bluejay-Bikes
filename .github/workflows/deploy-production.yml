@@ -1,0 +1,56 @@
+name: Deploy production
+on:
+  push:
+    branches:
+      - master
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      BIT_TOKEN: ${{ secrets.BIT_TOKEN }}
+      NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - uses: canastro/copy-file-action@master
+        with:
+          source: 'serverless.prod.yml'
+          target: 'serverless.yml'
+
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '12'
+
+      - uses: lukka/get-cmake@latest
+
+      - name: Install bit-bin
+        run: sudo npm install bit-bin@14.7.6 -g --unsafe-perm
+        
+      - name: Configure bit
+        run: |
+          npm config set @digiwill:registry https://node.bit.dev
+          npm config set //node.bit.dev/:_authToken $BIT_TOKEN
+          npm config set //node.bitsrc.io/:_authToken $BIT_TOKEN
+          bit config set analytics_reporting false
+          bit config set anonymous_reporting false
+          bit config set user.token $BIT_TOKEN
+          bit config
+          npm config list
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Serverless AWS authentication
+        run: npx serverless --component=serverless-next config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Deploy to AWS
+        run: npx serverless@2.72.2
