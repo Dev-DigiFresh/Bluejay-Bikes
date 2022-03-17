@@ -1,9 +1,9 @@
-import { Box, Button, Center, Flex, Image, Text } from '@chakra-ui/react';
+import { Box, Button, Center, Flex, Image, Link, Text } from '@chakra-ui/react';
 
 import get from 'lodash.get';
 import dynamic from 'next/dynamic';
 
-import Footer from 'digifresh.footer';
+import Footer from '@digiwill/digifresh.footer';
 
 import SocialSection from 'organisms/SocialSection';
 import CollapseButton from 'molecules/CollapseButton';
@@ -11,8 +11,6 @@ import { useContext } from 'react';
 import { ThumbButtonContext, actions } from 'contexts/ThumbButtonContext';
 import buildHomeData from 'helpers/buildHomeData';
 import { getHeader } from 'helpers/buildHomeData';
-import HeaderContainer from 'organisms/HeaderContainer';
-import BgImgDiv from 'atoms/BgImgDiv';
 import Header from 'organisms/Header';
 
 const ThumbsUpButton = dynamic(() => import('atoms/ThumbsUpButton'), { ssr: false });
@@ -22,16 +20,7 @@ const thumbsUpAction = actions.home;
 const Home = ({ data, pageIndex }) => {
   const homeData = get(data, `mainpage[${pageIndex}].fields`);
 
-  const {
-    collapseLinks,
-    socialLinks,
-    companyTitle,
-    videoTitle,
-    videoUrl,
-    links,
-    newsletterData,
-    intro
-  } = buildHomeData(data, pageIndex);
+  const { collapseLinks, socialLinks, links, intro } = buildHomeData(data, pageIndex);
 
   const { headerTitle, headerDescription, headerImage, headerButton, pageLogo } =
     getHeader(homeData);
@@ -59,41 +48,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
         buttonContent={headerButton}
       />
 
-      <BgImgDiv image={intro.image} py="37px">
-        <Center h="100%" flexDir="column" color="#fff">
-          <Text maxW={['295px', '340px']} mb="18px" textAlign="center" variant="subtitle">
+      <Box pt="21px" pb="27px">
+        <Center flexDir="column">
+          <Text maxW={['362px', '400px']} mb="5px" textAlign="center" variant="title">
             {intro.title}
           </Text>
-          <Text maxW="350px" textAlign="center" variant="text">
+
+          <Text maxW="230px" mb="14px" textAlign="center" variant="text">
             {intro.subtitle}
           </Text>
-        </Center>
-      </BgImgDiv>
 
-      <Box bgColor="#E0E0DB" py={['27px', '40px']} px="24px">
-        <Center>
-          <Text mb={['24px', '30px']} variant="subtitle">
-            {companyTitle}
-          </Text>
+          <Link href={intro.videoUrl} target="_blank" rel="noopener noreferrer">
+            <Image maxW="189px" w="100%" h="auto" src={intro.videoImg} />
+          </Link>
         </Center>
-      </Box>
-
-      <Box py="30px">
-        <Text mb={['14px', '20px']} variant="subtitle">
-          {videoTitle}
-        </Text>
-        <Box h={['210px', '310px']} overflow="hidden" borderRadius="simple" mx="20px">
-          <iframe
-            id-analytics-name="YouTube-Video"
-            id-analytics-group="youtube-video"
-            width="100%"
-            height="100%"
-            src={videoUrl}
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen></iframe>
-        </Box>
       </Box>
 
       <Box p="30px 20px">
@@ -135,7 +103,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
         </Button>
       </Center>
 
-      <Footer buttonLink="https://www.digifresh.io/" />
+      <Footer />
     </Box>
   );
 };

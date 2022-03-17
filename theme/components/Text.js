@@ -4,7 +4,7 @@ const big = '32px'; //24px
 const variants = {
   title: {
     fontSize: big,
-    lineHeight: '40px',
+    lineHeight: '36px',
     fontWeight: '900'
   },
   text: {

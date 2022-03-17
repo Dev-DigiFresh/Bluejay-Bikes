@@ -56,7 +56,8 @@ const getIntroData = (homeData, videos) => {
 
   return {
     intro: {
-      video: parsedVideo,
+      videoUrl: parsedVideo.url,
+      videoImg: parsedVideo.img,
       title: homeData['Intro Title'],
       subtitle: homeData['Intro Sub Title']
     }
