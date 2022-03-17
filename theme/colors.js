@@ -1,4 +1,4 @@
-export const brand = '#000';
+export const brand = '##234A5E';
 export const loading = '#B3B3B3';
 
 const button = '#49A850'; // green
