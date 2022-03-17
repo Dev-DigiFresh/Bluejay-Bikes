@@ -2,20 +2,15 @@ import get from 'lodash.get';
 
 import joinLinks from 'helpers/joinLinks';
 import getDataFrom from 'helpers/getDataFrom';
+import parseVideoBlock from 'helpers/parseVideoBlock';
 
 // TODO: break it into various functions
 const buildHomeData = (data, pageIndex) => {
   const homeData = get(data, `mainpage[${pageIndex}].fields`);
   const brandLinks = get(data, 'brandlinks');
-  const companies = get(data, 'companies');
+  const videos = get(data, 'videos');
   const collapseLinks = homeData['Quick Links'].map((links) => getDataFrom(brandLinks, links));
   const brandLinkAllProducts = brandLinks.find(({ fields }) => fields.Name === 'See All Products');
-
-  const newsletter = getNewsletter(data);
-  const interstitialConfig = {
-    ...newsletter,
-    emailCaptureImg: ''
-  };
 
   return {
     homeData,
@@ -24,24 +19,25 @@ const buildHomeData = (data, pageIndex) => {
     collapseLinks,
     socialLinks: getSocial(homeData, brandLinks),
     allProductsUrl: brandLinkAllProducts?.fields?.URL,
-    newsletterData: newsletter,
-    ...getVideo(homeData),
-    interstitialConfig,
+    ...getGettingStarted(homeData, videos),
     links: joinLinks(brandLinks),
-    introImage: homeData?.['Intro Background Image'][0].url,
-    introTitle: homeData['Intro Title'],
-    introDescription: homeData['Intro Description'],
-    ...getCompanies(homeData, companies)
+    ...getIntroData(homeData, videos),
+    ...getRegistrationData(homeData, brandLinks),
+    ...getWinData(homeData, brandLinks)
   };
 };
 
-const getVideo = (homeData) => {
-  const videoPrefix = 'https://www.youtube.com/embed/';
-  const videoCode = homeData?.['Video URL'].split('=').pop();
+const getGettingStarted = (homeData, allVideos) => {
+  const videoIds = homeData['Getting Started - Videos'];
+  const videos = videoIds.map((id) => getDataFrom(allVideos, id)).map(parseVideoBlock);
+
+  const title = homeData['Getting Started - title'];
 
   return {
-    videoTitle: homeData['Vid Title'],
-    videoUrl: `${videoPrefix}${videoCode}`
+    gettingStarted: {
+      title,
+      videos
+    }
   };
 };
 
@@ -53,30 +49,52 @@ const getSocial = (homeData, brandLinks) => {
     .map((link) => ({ name: link['Name'], url: link['URL'] }));
 };
 
-const getNewsletter = (data) => {
-  const newsletterData = get(data, 'emailcapture[0].fields');
+const getIntroData = (homeData, videos) => {
+  const currentVideo = homeData['Intro Video'][0];
+  const video = getDataFrom(videos, currentVideo);
+  const parsedVideo = parseVideoBlock(video);
 
   return {
-    newsletterData,
-    title: newsletterData['Title'],
-    description: newsletterData['Description'],
-    newsletterAction: newsletterData['Mailchimp Link'],
-    newsletterId: newsletterData['Mailchimp ID']
+    intro: {
+      video: parsedVideo,
+      title: homeData['Intro Title'],
+      subtitle: homeData['Intro Sub Title']
+    }
   };
 };
 
-const getCompanies = (homeData, allCompanies) => {
-  const companies = allCompanies
-    ?.filter(({ id }) => homeData?.['Companies Cards'].includes(id))
-    ?.map(({ fields }) => ({ url: fields?.['URL'], img: fields?.['Attachments'][0].url }));
-
-  if (companies.length % 2) {
-    companies.push({ lastItem: true });
-  }
+const getRegistrationData = (homeData, brandLinks) => {
+  const icon = homeData?.['Registration Icon']?.[0].url;
+  const title = homeData?.['Registration Title'];
+  const description = homeData?.['Registration Description'];
+  const buttonId = homeData?.['Registration Button'][0];
+  const button = getDataFrom(brandLinks, buttonId);
 
   return {
-    companyTitle: homeData?.['Companies Title'],
-    companies
+    registration: {
+      icon,
+      title,
+      description,
+      button
+    }
+  };
+};
+
+const getWinData = (homeData, brandLinks) => {
+  const image = homeData?.['Win Image']?.[0].url;
+  const title = homeData?.['Win Title'];
+  const subTitle = homeData?.['Win Sub Title'];
+
+  const buttonId = homeData?.['Win Button'][0];
+  const button = getDataFrom(brandLinks, buttonId);
+
+  return {
+    win: {
+      image,
+      title,
+      subTitle,
+      button
+    }
   };
 };
 
