@@ -13,6 +13,7 @@ import buildHomeData from 'helpers/buildHomeData';
 import { getHeader } from 'helpers/buildHomeData';
 import HeaderContainer from 'organisms/HeaderContainer';
 import BgImgDiv from 'atoms/BgImgDiv';
+import Header from 'organisms/Header';
 
 const ThumbsUpButton = dynamic(() => import('atoms/ThumbsUpButton'), { ssr: false });
 
@@ -22,21 +23,18 @@ const Home = ({ data, pageIndex }) => {
   const homeData = get(data, `mainpage[${pageIndex}].fields`);
 
   const {
-    pageLogo,
     collapseLinks,
     socialLinks,
     companyTitle,
     videoTitle,
     videoUrl,
     links,
-    companies,
     newsletterData,
-    introImage,
-    introTitle,
-    introDescription
+    intro
   } = buildHomeData(data, pageIndex);
 
-  const { headerTitle, headerDescription, headerImage, headerButton } = getHeader(homeData);
+  const { headerTitle, headerDescription, headerImage, headerButton, pageLogo } =
+    getHeader(homeData);
 
   const { disabled, handleThumbClick } = useContext(ThumbButtonContext);
   const thumbClick = () => handleThumbClick('home');
@@ -52,23 +50,22 @@ const Home = ({ data, pageIndex }) => {
 height="0" width="0" style="display:none;visibility:hidden"></iframe>`
         }}></noscript>
 
-      <HeaderContainer
+      <Header
         title={headerTitle}
-        bgImage={headerImage}
+        background={headerImage}
         logo={pageLogo}
         officialSite={links.officialSite}
         description={headerDescription}
         buttonContent={headerButton}
-        newsletterData={newsletterData}
       />
 
-      <BgImgDiv image={introImage} py="37px">
+      <BgImgDiv image={intro.image} py="37px">
         <Center h="100%" flexDir="column" color="#fff">
           <Text maxW={['295px', '340px']} mb="18px" textAlign="center" variant="subtitle">
-            {introTitle}
+            {intro.title}
           </Text>
           <Text maxW="350px" textAlign="center" variant="text">
-            {introDescription}
+            {intro.subtitle}
           </Text>
         </Center>
       </BgImgDiv>
@@ -79,19 +76,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
             {companyTitle}
           </Text>
         </Center>
-
-        <Flex flexWrap="wrap" gap="15px" justifyContent="space-between">
-          {companies.map(({ img, url, lastItem }, index) => (
-            <Box w="calc(50% - 8px)" key={index}>
-              {img && (
-                <a href={url} target="_blank" rel="noopener noreferrer">
-                  <Image src={img} borderRadius="simple" />
-                </a>
-              )}
-              {lastItem && <Box bgColor="#fff" opacity="0.4" borderRadius="simple" h="100%" />}
-            </Box>
-          ))}
-        </Flex>
       </Box>
 
       <Box py="30px">

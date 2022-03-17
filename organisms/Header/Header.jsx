@@ -2,8 +2,8 @@ import { Box, Image, Text } from '@chakra-ui/react';
 import BgImgDiv, { FloatingChildren } from 'atoms/BgImgDiv';
 import ShareIcon from 'atoms/ShareIcon';
 
-const Header = ({ title, logo, description, officialSite }) => (
-  <BgImgDiv h="300px">
+const Header = ({ title, background, logo, description, officialSite }) => (
+  <BgImgDiv h="300px" image={background}>
     <FloatingChildren>
       <Box
         display={['block', 'none']}
@@ -19,7 +19,7 @@ const Header = ({ title, logo, description, officialSite }) => (
         <ShareIcon />
       </Box>
       <a href={officialSite} className="ue" target="_blank" rel="noopener noreferrer">
-        <Image maxW="209px" src={logo} />
+        <Image w="82px" h="82px" borderRadius="full" border="2px solid #000" src={logo} />
       </a>
       {title && (
         <Text color="brand.secondary" variant="title" mt="15px" mb="10px" fontWeight="bold">
