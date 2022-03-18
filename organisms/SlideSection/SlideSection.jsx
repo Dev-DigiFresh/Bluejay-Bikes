@@ -8,7 +8,7 @@ const SlideSection = ({ title, videos, cardAnalyticsName = '' }) => {
   const [ref] = useKeenSlider(smallSliderSettings);
 
   return (
-    <Box bgColor="#EBF0F6" py="25px">
+    <Box bgColor="#EBF0F6" py={['25px', '50px']}>
       <Text maxW={['362px', '400px']} mb="25px" textAlign="center" variant="title">
         {title}
       </Text>

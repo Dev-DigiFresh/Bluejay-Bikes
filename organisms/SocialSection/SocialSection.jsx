@@ -11,7 +11,7 @@ export const icons = {
 
 const SocialSection = ({ social }) => (
   <Flex justifyContent="center">
-    <Flex justifyContent="space-between" gridGap="20px">
+    <Flex justifyContent="space-between" gridGap="35px">
       {social.map(({ name, url }, index) => (
         <Center h="60px" w="60px" borderRadius="full" border="2px solid #234A5E" key={index}>
           <SocialIcon

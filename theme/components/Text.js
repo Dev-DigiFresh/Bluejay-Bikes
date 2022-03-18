@@ -1,4 +1,3 @@
-const medium = '1em'; //18px
 const big = '32px'; //24px
 
 const variants = {

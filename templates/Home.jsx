@@ -57,7 +57,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
         buttonContent={headerButton}
       />
 
-      <Box pt="21px" pb="27px">
+      <Box pt={['21px', '50px']} pb={['27px', '50px']}>
         <Center flexDir="column">
           <Text maxW={['362px', '400px']} mb="5px" textAlign="center" variant="title">
             {intro.title}
@@ -75,7 +75,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
 
       <SlideSection {...gettingStarted} cardAnalyticsName="GettingStarted" />
 
-      <Box pt="34px" pb="53px">
+      <Box pt={['34px', '60px']} pb={['53px', '60px']}>
         <Center flexDir="column">
           <Image src={registration.icon} width="84.5px" />
 
@@ -100,7 +100,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
         </Center>
       </Box>
 
-      <Box bgColor="#EBF0F6" pb="34px" pt="39px" px="22px">
+      <Box bgColor="#EBF0F6" pb={['34px', '50px']} pt={['39px', '50px']} px="22px">
         <Center flexDir="column">
           <Text maxW={['296px', '360px']} textAlign="center" variant="title">
             {win.title}
@@ -131,7 +131,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
       <Box p="30px 20px">
         <SocialSection social={socialLinks} />
 
-        <Flex flexDir="column">
+        <Flex flexDir="column" mt="31px">
           <Box border="2px solid #000" borderRadius="10px">
             {collapseLinks.map((item, index) => {
               // TODO: export it
@@ -151,7 +151,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
         </Flex>
       </Box>
 
-      <Text mb="22px" mt="10px" variant="title">
+      <Text mb="22px" mt="10px" variant="title" fontSize={['24px', '26px']}>
         {homeData['Thumbs Up']}
       </Text>
       <Center mb="36px">
