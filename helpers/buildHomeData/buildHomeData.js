@@ -55,13 +55,15 @@ const getRegistrationData = (homeData, brandLinks) => {
   const description = homeData?.['Registration Description'];
   const buttonId = homeData?.['Registration Button'][0];
   const button = getDataFrom(brandLinks, buttonId);
-
   return {
     registration: {
       icon,
       title,
       description,
-      button
+      button: {
+        url: button?.['URL'],
+        text: button?.['Title']
+      }
     }
   };
 };

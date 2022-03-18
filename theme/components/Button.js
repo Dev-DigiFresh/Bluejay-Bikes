@@ -8,7 +8,9 @@ const variants = {
     lineHeight: '19.12px',
     letterSpacing: '0.04em',
     textTransform: 'uppercase',
-    boxShadow: '0px 9px 20px rgba(93, 128, 166, 0.2)'
+    boxShadow: '0px 9px 20px rgba(93, 128, 166, 0.2)',
+    overflow: 'hidden',
+    maxW: '100%'
   }
 };
 

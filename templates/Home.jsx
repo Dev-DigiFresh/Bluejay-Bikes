@@ -22,7 +22,7 @@ const thumbsUpAction = actions.home;
 const Home = ({ data, pageIndex }) => {
   const homeData = get(data, `mainpage[${pageIndex}].fields`);
 
-  const { collapseLinks, socialLinks, links, intro } = buildHomeData(data, pageIndex);
+  const { collapseLinks, socialLinks, links, intro, registration } = buildHomeData(data, pageIndex);
 
   const { headerTitle, headerDescription, headerImage, headerButton, pageLogo } =
     getHeader(homeData);
@@ -69,6 +69,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
       </Box>
 
       <SlideSection {...gettingStarted} cardAnalyticsName="GettingStarted" />
+
+      <Box pt="34px" pb="53px">
+        <Center flexDir="column">
+          <Image src={registration.icon} width="84.5px" />
+
+          <Text maxW={['362px', '400px']} mb="5px" my="25px" textAlign="center" variant="title">
+            {registration.title}
+          </Text>
+
+          <Text maxW="230px" mb="25px" textAlign="center" variant="text">
+            {registration.description}
+          </Text>
+
+          <Button
+            as={Link}
+            target="_blank"
+            variant="normal"
+            minW="232px"
+            h="54px"
+            rel="noopener noreferrer"
+            href={registration.button.url}>
+            {registration.button.text}
+          </Button>
+        </Center>
+      </Box>
+
+      <Box bgColor="#EBF0F6" pb="34px" pt="39px">
+        <Center flexDir="column">
+          <Text maxW={['362px', '400px']} mb="5px" my="25px" textAlign="center" variant="title">
+            {registration.title}
+          </Text>
+
+          <Text maxW="230px" mb="25px" textAlign="center" variant="text">
+            {registration.description}
+          </Text>
+
+          <Image src={registration.icon} width="84.5px" />
+
+          <Button
+            as={Link}
+            target="_blank"
+            variant="normal"
+            minW="232px"
+            h="54px"
+            rel="noopener noreferrer"
+            href={registration.button.url}>
+            {registration.button.text}
+          </Button>
+        </Center>
+      </Box>
 
       <Box p="30px 20px">
         <Flex flexDir="column">
