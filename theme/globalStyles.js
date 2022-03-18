@@ -4,7 +4,7 @@ const globalStyles = {
       padding: 0,
       margin: 0,
       fontSize: '18px',
-      color: 'main',
+      color: '#234A5E',
       fontFamily: 'Avenir',
       lineHeight: '23px',
       '*:focus': {

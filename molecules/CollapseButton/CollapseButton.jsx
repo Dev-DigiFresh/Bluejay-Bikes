@@ -18,7 +18,7 @@ const CollapseButton = ({ text, idAnalyticsName, url, last }) => (
       rel="noopener noreferrer"
       w="100%"
       fontWeight="600">
-      <Text textAlign="left" variant="text">
+      <Text fontSize="14px" textAlign="left" variant="normal">
         {text}
       </Text>
       <Text fontSize="20px" textAlign="right">

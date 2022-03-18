@@ -1,9 +1,9 @@
-import { Box, Button, Center, Flex, Image, Text } from '@chakra-ui/react';
+import { Box, Button, Center, Flex, Image, Link, Text } from '@chakra-ui/react';
 
 import get from 'lodash.get';
 import dynamic from 'next/dynamic';
 
-import Footer from 'digifresh.footer';
+import Footer from '@digiwill/digifresh.footer';
 
 import SocialSection from 'organisms/SocialSection';
 import CollapseButton from 'molecules/CollapseButton';
@@ -11,8 +11,11 @@ import { useContext } from 'react';
 import { ThumbButtonContext, actions } from 'contexts/ThumbButtonContext';
 import buildHomeData from 'helpers/buildHomeData';
 import { getHeader } from 'helpers/buildHomeData';
-import HeaderContainer from 'organisms/HeaderContainer';
-import BgImgDiv from 'atoms/BgImgDiv';
+import Header from 'organisms/Header';
+import SlideSection from 'organisms/SlideSection';
+import getGettingStarted from 'helpers/buildHomeData/getGettingStarted';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 const ThumbsUpButton = dynamic(() => import('atoms/ThumbsUpButton'), { ssr: false });
 
@@ -21,22 +24,15 @@ const thumbsUpAction = actions.home;
 const Home = ({ data, pageIndex }) => {
   const homeData = get(data, `mainpage[${pageIndex}].fields`);
 
-  const {
-    pageLogo,
-    collapseLinks,
-    socialLinks,
-    companyTitle,
-    videoTitle,
-    videoUrl,
-    links,
-    companies,
-    newsletterData,
-    introImage,
-    introTitle,
-    introDescription
-  } = buildHomeData(data, pageIndex);
+  const { collapseLinks, socialLinks, links, intro, registration, win } = buildHomeData(
+    data,
+    pageIndex
+  );
 
-  const { headerTitle, headerDescription, headerImage, headerButton } = getHeader(homeData);
+  const { headerTitle, headerDescription, headerImage, headerButton, pageLogo } =
+    getHeader(homeData);
+
+  const { gettingStarted } = getGettingStarted(homeData, data?.videos);
 
   const { disabled, handleThumbClick } = useContext(ThumbButtonContext);
   const thumbClick = () => handleThumbClick('home');
@@ -52,68 +48,90 @@ const Home = ({ data, pageIndex }) => {
 height="0" width="0" style="display:none;visibility:hidden"></iframe>`
         }}></noscript>
 
-      <HeaderContainer
+      <Header
         title={headerTitle}
-        bgImage={headerImage}
+        background={headerImage}
         logo={pageLogo}
         officialSite={links.officialSite}
         description={headerDescription}
         buttonContent={headerButton}
-        newsletterData={newsletterData}
       />
 
-      <BgImgDiv image={introImage} py="37px">
-        <Center h="100%" flexDir="column" color="#fff">
-          <Text maxW={['295px', '340px']} mb="18px" textAlign="center" variant="subtitle">
-            {introTitle}
+      <Box pt={['21px', '50px']} pb={['27px', '50px']}>
+        <Center flexDir="column">
+          <Text maxW={['362px', '400px']} mb="5px" textAlign="center" variant="title">
+            {intro.title}
           </Text>
-          <Text maxW="350px" textAlign="center" variant="text">
-            {introDescription}
-          </Text>
-        </Center>
-      </BgImgDiv>
 
-      <Box bgColor="#E0E0DB" py={['27px', '40px']} px="24px">
-        <Center>
-          <Text mb={['24px', '30px']} variant="subtitle">
-            {companyTitle}
+          <Text maxW="230px" mb="14px" textAlign="center" variant="text">
+            {intro.subtitle}
           </Text>
-        </Center>
 
-        <Flex flexWrap="wrap" gap="15px" justifyContent="space-between">
-          {companies.map(({ img, url, lastItem }, index) => (
-            <Box w="calc(50% - 8px)" key={index}>
-              {img && (
-                <a href={url} target="_blank" rel="noopener noreferrer">
-                  <Image src={img} borderRadius="simple" />
-                </a>
-              )}
-              {lastItem && <Box bgColor="#fff" opacity="0.4" borderRadius="simple" h="100%" />}
-            </Box>
-          ))}
-        </Flex>
+          <Link href={intro.videoUrl} target="_blank" rel="noopener noreferrer">
+            <Image maxW="189px" w="100%" h="auto" src={intro.videoImg} />
+          </Link>
+        </Center>
       </Box>
 
-      <Box py="30px">
-        <Text mb={['14px', '20px']} variant="subtitle">
-          {videoTitle}
-        </Text>
-        <Box h={['210px', '310px']} overflow="hidden" borderRadius="simple" mx="20px">
-          <iframe
-            id-analytics-name="YouTube-Video"
-            id-analytics-group="youtube-video"
-            width="100%"
-            height="100%"
-            src={videoUrl}
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen></iframe>
-        </Box>
+      <SlideSection {...gettingStarted} cardAnalyticsName="GettingStarted" />
+
+      <Box pt={['34px', '60px']} pb={['53px', '60px']}>
+        <Center flexDir="column">
+          <Image src={registration.icon} width="84.5px" />
+
+          <Text maxW={['362px', '400px']} mb="5px" my="25px" textAlign="center" variant="title">
+            {registration.title}
+          </Text>
+
+          <Text maxW="230px" mb="25px" textAlign="center" variant="text">
+            {registration.description}
+          </Text>
+
+          <Button
+            as={Link}
+            target="_blank"
+            variant="normal"
+            minW="232px"
+            h="54px"
+            rel="noopener noreferrer"
+            href={registration.button.url}>
+            {registration.button.text}
+          </Button>
+        </Center>
+      </Box>
+
+      <Box bgColor="#EBF0F6" pb={['34px', '50px']} pt={['39px', '50px']} px="22px">
+        <Center flexDir="column">
+          <Text maxW={['296px', '360px']} textAlign="center" variant="title">
+            {win.title}
+          </Text>
+
+          <Text my="20px" textAlign="center" variant="text">
+            {win.subTitle}
+          </Text>
+
+          <Image src={win.image} maxW="100%" mb="23px" />
+
+          <Button
+            as={Link}
+            target="_blank"
+            variant="normal"
+            minW="232px"
+            h="54px"
+            rel="noopener noreferrer"
+            href={win.button.url}>
+            <Box mr="12px">
+              <FontAwesomeIcon icon={faInstagram} transform="grow-15" />
+            </Box>
+            {win.button.text}
+          </Button>
+        </Center>
       </Box>
 
       <Box p="30px 20px">
-        <Flex flexDir="column">
+        <SocialSection social={socialLinks} />
+
+        <Flex flexDir="column" mt="31px">
           <Box border="2px solid #000" borderRadius="10px">
             {collapseLinks.map((item, index) => {
               // TODO: export it
@@ -131,11 +149,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
             })}
           </Box>
         </Flex>
-
-        <SocialSection social={socialLinks} />
       </Box>
 
-      <Text mb="22px" mt="10px" variant="title">
+      <Text mb="22px" mt="10px" variant="title" fontSize={['24px', '26px']}>
         {homeData['Thumbs Up']}
       </Text>
       <Center mb="36px">
@@ -151,7 +167,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
         </Button>
       </Center>
 
-      <Footer buttonLink="https://www.digifresh.io/" />
+      <Footer />
     </Box>
   );
 };

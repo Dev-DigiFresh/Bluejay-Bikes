@@ -14,6 +14,7 @@
   "dependencies": {
     "@chakra-ui/react": "^1.6.3",
     "@digiwill/digifresh.floating-button": "^0.0.1",
+    "@digiwill/digifresh.footer": "^0.0.1",
     "@digiwill/digifresh.input": "^0.0.2",
     "@digiwill/digifresh.mini-slider-card": "^0.0.1",
     "@digiwill/digifresh.modal": "^0.0.1",
@@ -28,7 +29,6 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
-    "digifresh.footer": "^0.0.3",
     "emotion-theming": "^11.0.0",
     "framer-motion": "^4",
     "keen-slider": "^5.5.1",

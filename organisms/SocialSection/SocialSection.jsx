@@ -1,5 +1,5 @@
 import { faFacebookF, faInstagram, faYoutube, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { Flex } from '@chakra-ui/react';
+import { Center, Flex } from '@chakra-ui/react';
 import SocialIcon from '@digiwill/digifresh.social-icon';
 
 export const icons = {
@@ -10,20 +10,21 @@ export const icons = {
 };
 
 const SocialSection = ({ social }) => (
-  <Flex justifyContent="center" mt="30px">
-    <Flex justifyContent="space-between" gridGap="20px">
+  <Flex justifyContent="center">
+    <Flex justifyContent="space-between" gridGap="35px">
       {social.map(({ name, url }, index) => (
-        <SocialIcon
-          key={index}
-          url={url}
-          variant="social"
-          idAnalyticsName={`Social-${name}`}
-          idAnalyticsGroup="external-page"
-          icon={icons[name.toLowerCase()]}
-          faProps={{
-            transform: 'grow-15'
-          }}
-        />
+        <Center h="60px" w="60px" borderRadius="full" border="2px solid #234A5E" key={index}>
+          <SocialIcon
+            url={url}
+            variant="social"
+            idAnalyticsName={`Social-${name}`}
+            idAnalyticsGroup="external-page"
+            icon={icons[name.toLowerCase()]}
+            faProps={{
+              transform: 'grow-15'
+            }}
+          />
+        </Center>
       ))}
     </Flex>
   </Flex>
