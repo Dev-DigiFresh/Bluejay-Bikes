@@ -21,11 +21,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - uses: canastro/copy-file-action@master
-        with:
-          source: 'serverless.prod.yml'
-          target: 'serverless.yml'
-
       - uses: actions/setup-node@v2-beta
         with:
           node-version: '12'
