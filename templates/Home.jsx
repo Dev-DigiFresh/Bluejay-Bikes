@@ -14,6 +14,8 @@ import { getHeader } from 'helpers/buildHomeData';
 import Header from 'organisms/Header';
 import SlideSection from 'organisms/SlideSection';
 import getGettingStarted from 'helpers/buildHomeData/getGettingStarted';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 const ThumbsUpButton = dynamic(() => import('atoms/ThumbsUpButton'), { ssr: false });
 
@@ -22,7 +24,10 @@ const thumbsUpAction = actions.home;
 const Home = ({ data, pageIndex }) => {
   const homeData = get(data, `mainpage[${pageIndex}].fields`);
 
-  const { collapseLinks, socialLinks, links, intro, registration } = buildHomeData(data, pageIndex);
+  const { collapseLinks, socialLinks, links, intro, registration, win } = buildHomeData(
+    data,
+    pageIndex
+  );
 
   const { headerTitle, headerDescription, headerImage, headerButton, pageLogo } =
     getHeader(homeData);
@@ -95,17 +100,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
         </Center>
       </Box>
 
-      <Box bgColor="#EBF0F6" pb="34px" pt="39px">
+      <Box bgColor="#EBF0F6" pb="34px" pt="39px" px="22px">
         <Center flexDir="column">
-          <Text maxW={['362px', '400px']} mb="5px" my="25px" textAlign="center" variant="title">
-            {registration.title}
+          <Text maxW={['296px', '360px']} textAlign="center" variant="title">
+            {win.title}
           </Text>
 
-          <Text maxW="230px" mb="25px" textAlign="center" variant="text">
-            {registration.description}
+          <Text my="20px" textAlign="center" variant="text">
+            {win.subTitle}
           </Text>
 
-          <Image src={registration.icon} width="84.5px" />
+          <Image src={win.image} maxW="100%" mb="23px" />
 
           <Button
             as={Link}
@@ -114,13 +119,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
             minW="232px"
             h="54px"
             rel="noopener noreferrer"
-            href={registration.button.url}>
-            {registration.button.text}
+            href={win.button.url}>
+            <Box mr="12px">
+              <FontAwesomeIcon icon={faInstagram} transform="grow-15" />
+            </Box>
+            {win.button.text}
           </Button>
         </Center>
       </Box>
 
       <Box p="30px 20px">
+        <SocialSection social={socialLinks} />
+
         <Flex flexDir="column">
           <Box border="2px solid #000" borderRadius="10px">
             {collapseLinks.map((item, index) => {
@@ -139,8 +149,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
             })}
           </Box>
         </Flex>
-
-        <SocialSection social={socialLinks} />
       </Box>
 
       <Text mb="22px" mt="10px" variant="title">

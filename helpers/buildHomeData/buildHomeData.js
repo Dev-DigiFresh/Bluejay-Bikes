@@ -81,7 +81,10 @@ const getWinData = (homeData, brandLinks) => {
       image,
       title,
       subTitle,
-      button
+      button: {
+        url: button?.['URL'],
+        text: button?.['Title']
+      }
     }
   };
 };

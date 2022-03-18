@@ -1,5 +1,5 @@
 import { faFacebookF, faInstagram, faYoutube, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { Box, Center, Flex } from '@chakra-ui/react';
+import { Center, Flex } from '@chakra-ui/react';
 import SocialIcon from '@digiwill/digifresh.social-icon';
 
 export const icons = {
@@ -10,7 +10,7 @@ export const icons = {
 };
 
 const SocialSection = ({ social }) => (
-  <Flex justifyContent="center" mt="30px">
+  <Flex justifyContent="center">
     <Flex justifyContent="space-between" gridGap="20px">
       {social.map(({ name, url }, index) => (
         <Center h="60px" w="60px" borderRadius="full" border="2px solid #234A5E" key={index}>
