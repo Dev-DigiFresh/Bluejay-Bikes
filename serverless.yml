@@ -1,5 +1,6 @@
 bluejaybikes:
   component: "@sls-next/serverless-component"
-  # inputs: 
-  #   cloudfront: 
-  #     distributionId: EUUOLI06JLE03
+  inputs: 
+    cloudfront: 
+      distributionId: E122VZ14UXCL5J
+    bucketName: storyline-bluejaybikes
