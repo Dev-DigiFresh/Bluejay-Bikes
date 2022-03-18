@@ -12,6 +12,8 @@ import { ThumbButtonContext, actions } from 'contexts/ThumbButtonContext';
 import buildHomeData from 'helpers/buildHomeData';
 import { getHeader } from 'helpers/buildHomeData';
 import Header from 'organisms/Header';
+import SlideSection from 'organisms/SlideSection';
+import getGettingStarted from 'helpers/buildHomeData/getGettingStarted';
 
 const ThumbsUpButton = dynamic(() => import('atoms/ThumbsUpButton'), { ssr: false });
 
@@ -24,6 +26,8 @@ const Home = ({ data, pageIndex }) => {
 
   const { headerTitle, headerDescription, headerImage, headerButton, pageLogo } =
     getHeader(homeData);
+
+  const { gettingStarted } = getGettingStarted(homeData, data?.videos);
 
   const { disabled, handleThumbClick } = useContext(ThumbButtonContext);
   const thumbClick = () => handleThumbClick('home');
@@ -63,6 +67,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
           </Link>
         </Center>
       </Box>
+
+      <SlideSection {...gettingStarted} cardAnalyticsName="GettingStarted" />
 
       <Box p="30px 20px">
         <Flex flexDir="column">

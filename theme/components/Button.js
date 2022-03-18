@@ -4,6 +4,7 @@ const variants = {
     color: '#fff',
     bgColor: 'background.button',
     fontWeight: '900',
+    borderRadius: '0',
     lineHeight: '19.12px',
     letterSpacing: '0.04em',
     textTransform: 'uppercase',

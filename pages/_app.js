@@ -14,7 +14,7 @@ function App({ Component, pageProps }) {
         <link href="/fonts/stylesheet.css" rel="stylesheet" />
 
         <meta charSet="utf-8" />
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/favicon.webp" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </Head>

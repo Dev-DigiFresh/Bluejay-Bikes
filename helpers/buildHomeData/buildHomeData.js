@@ -19,25 +19,10 @@ const buildHomeData = (data, pageIndex) => {
     collapseLinks,
     socialLinks: getSocial(homeData, brandLinks),
     allProductsUrl: brandLinkAllProducts?.fields?.URL,
-    ...getGettingStarted(homeData, videos),
     links: joinLinks(brandLinks),
     ...getIntroData(homeData, videos),
     ...getRegistrationData(homeData, brandLinks),
     ...getWinData(homeData, brandLinks)
-  };
-};
-
-const getGettingStarted = (homeData, allVideos) => {
-  const videoIds = homeData['Getting Started - Videos'];
-  const videos = videoIds.map((id) => getDataFrom(allVideos, id)).map(parseVideoBlock);
-
-  const title = homeData['Getting Started - title'];
-
-  return {
-    gettingStarted: {
-      title,
-      videos
-    }
   };
 };
 
