@@ -9,7 +9,7 @@ const SlideSection = ({ title, videos, cardAnalyticsName = '' }) => {
 
   return (
     <Box bgColor="#EBF0F6" py={['25px', '50px']}>
-      <Text maxW={['362px', '400px']} mb="25px" textAlign="center" variant="title">
+      <Text mx="auto" maxW={['362px', '400px']} mb="25px" textAlign="center" variant="title">
         {title}
       </Text>
 
