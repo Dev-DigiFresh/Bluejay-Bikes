@@ -132,7 +132,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
         <SocialSection social={socialLinks} />
 
         <Flex flexDir="column" mt="31px">
-          <Box border="2px solid #000" borderRadius="10px">
+          <Box border="2px solid #234A5E" borderRadius="10px">
             {collapseLinks.map((item, index) => {
               // TODO: export it
               const last = index === collapseLinks.length - 1;

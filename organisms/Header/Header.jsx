@@ -20,7 +20,7 @@ const Header = ({ title, background, logo, description, officialSite }) => (
           <ShareIcon />
         </Box>
         <a href={officialSite} className="ue" target="_blank" rel="noopener noreferrer">
-          <Image w="82px" h="82px" borderRadius="full" border="2px solid #000" src={logo} />
+          <Image w="82px" h="82px" borderRadius="full" border="2px solid #234A5E" src={logo} />
         </a>
         {title && (
           <Text color="brand.secondary" variant="title" mt="15px" mb="10px" fontWeight="bold">
