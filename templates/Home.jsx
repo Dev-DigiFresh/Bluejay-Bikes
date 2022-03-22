@@ -106,7 +106,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
             {win.title}
           </Text>
 
-          <Text my="20px" textAlign="center" variant="text">
+          <Text mt="10px" mb="20px" textAlign="center" variant="text">
             {win.subTitle}
           </Text>
 
@@ -156,9 +156,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
       </Text>
       <Center mb="36px">
         <Button
-          variant={disabled[thumbsUpAction] ? 'disabled' : 'normal'}
+          variant="normal"
           w="158px"
           h="60px"
+          disabled={disabled[thumbsUpAction]}
           id="thumbsup-button-home"
           onClick={thumbClick}
           id-analytics-name="Helpful-Page"
