@@ -3,7 +3,7 @@ import BgImgDiv, { FloatingChildren } from 'atoms/BgImgDiv';
 import ShareIcon from 'atoms/ShareIcon';
 
 const Header = ({ title, background, logo, description, officialSite }) => (
-  <BgImgDiv h="300px" image={background}>
+  <BgImgDiv h="280px" image={background}>
     <Box h="100%" bgImage="linear-gradient(0deg, rgb(0 0 0 / 80%) 0%, rgba(0, 0, 0, 0) 100%)">
       <FloatingChildren>
         <Box
@@ -28,7 +28,7 @@ const Header = ({ title, background, logo, description, officialSite }) => (
           </Text>
         )}
         {description && (
-          <Text color="brand.secondary" variant="subtext" mb="10px">
+          <Text color="brand.secondary" variant="subtext">
             {description}
           </Text>
         )}
