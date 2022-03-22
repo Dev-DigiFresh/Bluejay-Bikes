@@ -1,3 +1,13 @@
+# [0.10.0](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/v0.9.0...v0.10.0) (2022-03-22)
+
+
+### Features
+
+* **email:** create link ([68e1ffb](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/68e1ffb1c93549eaf1882dafad4897bda4dfe03d))
+* **slidesection:** center title ([f18a956](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/f18a956ba2527dbcbf942fcf26a6614c023b5e43))
+
+
+
 # [0.9.0](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/v0.8.0...v0.9.0) (2022-03-18)
 
 
