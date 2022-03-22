@@ -8,6 +8,7 @@ const BgImgDiv = ({ children, image, ...rest }) => (
     bgImage={image}
     bgSize="cover"
     bgRepeat="no-repeat"
+    bgPos="center"
     {...rest}>
     {children}
   </Box>
