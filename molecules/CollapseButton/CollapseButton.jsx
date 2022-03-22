@@ -1,8 +1,11 @@
 import { Flex, Image, Text } from '@chakra-ui/react';
 import ArrowRight from 'public/arrowRight.png';
 
-const CollapseButton = ({ text, idAnalyticsName, url, last }) => (
-  <>
+const CollapseButton = ({ text, idAnalyticsName, url, last }) => {
+  const isEmailLink = url.match(/.*@.*/g);
+  const href = isEmailLink ? `mailto:${url}` : url;
+
+  return (
     <Flex
       alignItems="center"
       justifyContent="space-between"
@@ -12,7 +15,7 @@ const CollapseButton = ({ text, idAnalyticsName, url, last }) => (
       borderBottom={last ? 'unset' : '2px'}
       id-analytics-group="external-page"
       id-analytics-name={idAnalyticsName}
-      href={url}
+      href={href}
       as="a"
       target="_blank"
       rel="noopener noreferrer"
@@ -25,7 +28,7 @@ const CollapseButton = ({ text, idAnalyticsName, url, last }) => (
         <Image src={ArrowRight} />
       </Text>
     </Flex>
-  </>
-);
+  );
+};
 
 export default CollapseButton;
