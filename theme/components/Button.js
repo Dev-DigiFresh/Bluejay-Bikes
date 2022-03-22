@@ -10,7 +10,13 @@ const variants = {
     textTransform: 'uppercase',
     boxShadow: '0px 9px 20px rgba(93, 128, 166, 0.2)',
     overflow: 'hidden',
-    maxW: '100%'
+    maxW: '100%',
+    '&:disabled': {
+      pointerEvents: 'none',
+      '&:hover': {
+        bgColor: 'background.button'
+      }
+    }
   }
 };
 
