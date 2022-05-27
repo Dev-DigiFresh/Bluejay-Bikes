@@ -14,7 +14,7 @@
   "dependencies": {
     "@chakra-ui/react": "^1.6.3",
     "@digiwill/digifresh.floating-button": "^0.0.1",
-    "@digiwill/digifresh.footer": "^0.0.1",
+    "digifresh.default-footer": "^1.1.1",
     "@digiwill/digifresh.input": "^0.0.2",
     "@digiwill/digifresh.mini-slider-card": "^0.0.1",
     "@digiwill/digifresh.modal": "^0.0.1",

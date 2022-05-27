@@ -1,6 +1,6 @@
 const { Box } = require('@chakra-ui/react');
 
-const FloatingChildren = ({ children }) => {
+const FloatingChildren = ({ children, ...rest }) => {
   return (
     <>
       <Box
@@ -12,7 +12,8 @@ const FloatingChildren = ({ children }) => {
         h="100%"
         flexDir="column"
         pt="50px"
-        pb="25px">
+        pb="25px"
+        {...rest}>
         {children}
       </Box>
     </>

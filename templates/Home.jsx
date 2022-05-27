@@ -3,7 +3,7 @@ import { Box, Button, Center, Flex, Image, Link, Text } from '@chakra-ui/react';
 import get from 'lodash.get';
 import dynamic from 'next/dynamic';
 
-import Footer from '@digiwill/digifresh.footer';
+import Footer from 'digifresh.default-footer';
 
 import SocialSection from 'organisms/SocialSection';
 import CollapseButton from 'molecules/CollapseButton';
