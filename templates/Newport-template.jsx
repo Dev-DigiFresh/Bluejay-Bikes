@@ -12,6 +12,7 @@ import NewportHeader from 'organisms/Header/NewportHeader';
 import SocialSection from 'organisms/SocialSection';
 import CollapseButton from 'molecules/CollapseButton';
 import IntroSection from 'molecules/IntroSection';
+import NewportVideo from 'atoms/NewportVideo';
 
 const ThumbsUpButton = dynamic(() => import('atoms/ThumbsUpButton'), { ssr: false });
 
@@ -19,13 +20,18 @@ const thumbsUpAction = actions.home;
 
 const Home = ({ data, pageIndex }) => {
   const homeData = get(data, `mainpage[${pageIndex}].fields`);
-  const { socialLinks, collapseLinks, links, cardsData } = buildNewportData(data, pageIndex);
+  const { socialLinks, collapseLinks, links, cardsData, videoData } = buildNewportData(
+    data,
+    pageIndex
+  );
 
   const { headerTitle, headerDescription, headerImage, headerButton, pageLogo } =
     getHeader(homeData);
 
   const { disabled, handleThumbClick } = useContext(ThumbButtonContext);
   const thumbClick = () => handleThumbClick('home');
+
+  console.log(videoData);
 
   const gtmCode =
     process.env.NODE_ENV === 'development' ? 'XX-FAKE' : get(data, 'gtm[0].fields.GTM');
@@ -49,10 +55,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
 
       <IntroSection cardsData={cardsData} />
 
-      <Box p="30px 20px">
-        <SocialSection social={socialLinks} />
+      <Box p="15px 30px">
+        <Text variant="title" mb="14px" fontSize="18px">
+          {videoData.title}
+        </Text>
+        <NewportVideo url={videoData.url} />
+      </Box>
 
-        <Flex flexDir="column" mt="31px">
+      <Box p="30px 20px">
+        <Flex flexDir="column" mb="30px">
           <Box border="2px solid #234A5E" borderRadius="10px">
             {collapseLinks.map((item, index) => {
               // TODO: export it
@@ -70,10 +81,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
             })}
           </Box>
         </Flex>
+
+        <SocialSection social={socialLinks} />
       </Box>
 
       <Text mb="22px" mt="10px" variant="title" fontSize={['24px', '26px']}>
-        {homeData['Thumbs Up']}
+        {homeData['Thumbs Up'] ?? 'Was this helpful?'}
       </Text>
       <Center mb="36px">
         <Button
