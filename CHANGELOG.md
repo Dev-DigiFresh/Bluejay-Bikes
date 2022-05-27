@@ -1,3 +1,12 @@
+## [0.10.1](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/v0.10.0...v0.10.1) (2022-05-27)
+
+
+### Bug Fixes
+
+* remove console ([f749755](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/f7497559e8c9ca9ab15a76a6c66132cf2e745d7b))
+
+
+
 # [0.10.0](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/v0.9.0...v0.10.0) (2022-03-22)
 
 
