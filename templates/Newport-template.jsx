@@ -31,8 +31,6 @@ const Home = ({ data, pageIndex }) => {
   const { disabled, handleThumbClick } = useContext(ThumbButtonContext);
   const thumbClick = () => handleThumbClick('home');
 
-  console.log(videoData);
-
   const gtmCode =
     process.env.NODE_ENV === 'development' ? 'XX-FAKE' : get(data, 'gtm[0].fields.GTM');
 
