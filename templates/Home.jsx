@@ -44,7 +44,7 @@ const Home = ({ data, pageIndex }) => {
     <Box maxW="600px" m="0 auto" textAlign="center">
       <noscript
         dangerouslySetInnerHTML={{
-          __html: `<iframe src=>"https://www.googletagmanager.com/ns.html?id=${gtmCode}"
+          __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${gtmCode}"
 height="0" width="0" style="display:none;visibility:hidden"></iframe>`
         }}></noscript>
 
