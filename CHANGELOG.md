@@ -1,3 +1,12 @@
+# [0.11.0](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/v0.10.2...v0.11.0) (2022-05-28)
+
+
+### Features
+
+* add newport api to deploy file ([e08ac75](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/e08ac75890adcd8cb9f23316d32f6ec4dc8bd610))
+
+
+
 ## [0.10.2](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/v0.10.1...v0.10.2) (2022-05-28)
 
 
@@ -32,15 +41,6 @@
 ### Features
 
 * set serverless config ([f3f8d1a](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/f3f8d1a7227cd299b0d13ed1f12b6cce356bac07))
-
-
-
-# [0.8.0](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/88cd5f3bff959e93df167a22aa1403e1b5615262...v0.8.0) (2022-03-18)
-
-
-### Features
-
-* initial commit ([88cd5f3](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/88cd5f3bff959e93df167a22aa1403e1b5615262))
 
 
 
