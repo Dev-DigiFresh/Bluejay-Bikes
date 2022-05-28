@@ -11,6 +11,7 @@ jobs:
     env:
       BIT_TOKEN: ${{ secrets.BIT_TOKEN }}
       NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+      NEXT_PUBLIC_API_URL_NEWPORT: ${{ secrets.NEXT_PUBLIC_API_URL_NEWPORT }}
     steps:
       - uses: actions/checkout@v2
 
@@ -29,7 +30,7 @@ jobs:
 
       - name: Install bit-bin
         run: sudo npm install bit-bin@14.7.6 -g --unsafe-perm
-        
+
       - name: Configure bit
         run: |
           npm config set @digiwill:registry https://node.bit.dev
