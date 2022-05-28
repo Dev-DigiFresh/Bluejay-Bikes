@@ -1,3 +1,12 @@
+## [0.10.2](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/v0.10.1...v0.10.2) (2022-05-28)
+
+
+### Bug Fixes
+
+* add right  way to set gtm url ([3e3d1cd](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/3e3d1cd887dbad788fc648cb1846ab6e7b9f0b2b))
+
+
+
 ## [0.10.1](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/v0.10.0...v0.10.1) (2022-05-27)
 
 
