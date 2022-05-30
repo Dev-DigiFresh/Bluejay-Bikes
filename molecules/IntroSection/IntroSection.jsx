@@ -9,7 +9,7 @@ const IntroSection = ({ cardsData }) => (
     <Text variant="title" mb="65px">
       WE ARE IN YOUR CITY!
     </Text>
-    <Flex justifyContent="space-between" maxW="376px" w="100%">
+    <Flex justifyContent="center" gap="10px" w="100%">
       {cardsData.map(({ name, description, button, image }) => (
         <BikeCard key={name} title={name} description={description} button={button} image={image} />
       ))}
