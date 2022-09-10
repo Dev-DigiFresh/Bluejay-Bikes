@@ -1,3 +1,12 @@
+# [0.12.0](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/v0.11.0...v0.12.0) (2022-09-10)
+
+
+### Features
+
+* create marin page ([#4](https://github.com/Dev-DigiFresh/Bluejay-Bikes/issues/4)) ([d560d9e](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/d560d9ee8d6f3762c2251354aa8928b6f475a756))
+
+
+
 # [0.11.0](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/v0.10.2...v0.11.0) (2022-05-28)
 
 
@@ -32,15 +41,6 @@
 
 * **email:** create link ([68e1ffb](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/68e1ffb1c93549eaf1882dafad4897bda4dfe03d))
 * **slidesection:** center title ([f18a956](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/f18a956ba2527dbcbf942fcf26a6614c023b5e43))
-
-
-
-# [0.9.0](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/v0.8.0...v0.9.0) (2022-03-18)
-
-
-### Features
-
-* set serverless config ([f3f8d1a](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/f3f8d1a7227cd299b0d13ed1f12b6cce356bac07))
 
 
 
