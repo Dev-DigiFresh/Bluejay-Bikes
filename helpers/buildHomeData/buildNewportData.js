@@ -14,9 +14,17 @@ export const buildNewportData = (data, pageIndex) => {
   const brandLinkAllProducts = brandLinks.find(({ fields }) => fields.Name === 'See All Products');
   const currentCards = homeData['Cards'].map((card) => getDataFrom(cards, card));
   const cardsData = getCards(currentCards);
+  const emailCaptureData = get(data, `emailcapture[${pageIndex}].fields`);
   const getVideo = {
     title: homeData['Video Title'],
     url: homeData['Video URL']
+  };
+
+  const emailCapture = {
+    title: emailCaptureData['Title'],
+    name: emailCaptureData['Name'],
+    description: emailCaptureData['Description'],
+    email: emailCaptureData['Email']
   };
 
   return {
@@ -28,7 +36,8 @@ export const buildNewportData = (data, pageIndex) => {
     allProductsUrl: brandLinkAllProducts?.fields?.URL,
     links: joinLinks(brandLinks),
     cardsData,
-    videoData: getVideo
+    videoData: getVideo,
+    emailCapture
   };
 };
 
