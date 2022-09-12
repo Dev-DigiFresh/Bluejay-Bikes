@@ -1,3 +1,12 @@
+# [0.13.0](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/v0.12.0...v0.13.0) (2022-09-12)
+
+
+### Features
+
+* add data dynamically ([#5](https://github.com/Dev-DigiFresh/Bluejay-Bikes/issues/5)) ([0cbf398](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/0cbf398b0ac54ce6cc37eb74bd78e57c3aed83e0))
+
+
+
 # [0.12.0](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/v0.11.0...v0.12.0) (2022-09-10)
 
 
@@ -31,16 +40,6 @@
 ### Bug Fixes
 
 * remove console ([f749755](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/f7497559e8c9ca9ab15a76a6c66132cf2e745d7b))
-
-
-
-# [0.10.0](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/v0.9.0...v0.10.0) (2022-03-22)
-
-
-### Features
-
-* **email:** create link ([68e1ffb](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/68e1ffb1c93549eaf1882dafad4897bda4dfe03d))
-* **slidesection:** center title ([f18a956](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/f18a956ba2527dbcbf942fcf26a6614c023b5e43))
 
 
 
