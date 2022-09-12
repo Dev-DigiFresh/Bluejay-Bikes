@@ -17,6 +17,15 @@ const variants = {
         bgColor: 'background.button'
       }
     }
+  },
+  'newsletter.button': {
+    borderRadius: 'full',
+    fontSize: '14px',
+    fontWeight: '800',
+    lineHeight: '14px',
+    w: '100%',
+    backgroundColor: '#FFF',
+    color: 'brand.main'
   }
 };
 

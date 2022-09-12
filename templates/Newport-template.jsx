@@ -1,4 +1,4 @@
-import { Box, Button, Center, Flex, Text } from '@chakra-ui/react';
+import { Box, Button, Center, Flex, Slide, Text, useDisclosure } from '@chakra-ui/react';
 
 import get from 'lodash.get';
 import dynamic from 'next/dynamic';
@@ -13,6 +13,7 @@ import SocialSection from 'organisms/SocialSection';
 import CollapseButton from 'molecules/CollapseButton';
 import IntroSection from 'molecules/IntroSection';
 import NewportVideo from 'atoms/NewportVideo';
+import FloatingNewsletter from 'molecules/FloatingNewsletter';
 
 const ThumbsUpButton = dynamic(() => import('atoms/ThumbsUpButton'), { ssr: false });
 
@@ -20,10 +21,8 @@ const thumbsUpAction = actions.home;
 
 const Home = ({ data, pageIndex }) => {
   const homeData = get(data, `mainpage[${pageIndex}].fields`);
-  const { socialLinks, collapseLinks, links, cardsData, videoData } = buildNewportData(
-    data,
-    pageIndex
-  );
+  const { socialLinks, collapseLinks, links, cardsData, videoData, emailCapture } =
+    buildNewportData(data, pageIndex);
 
   const { headerTitle, headerDescription, headerImage, headerButton, pageLogo } =
     getHeader(homeData);
@@ -35,6 +34,14 @@ const Home = ({ data, pageIndex }) => {
 
   const gtmCode =
     process.env.NODE_ENV === 'development' ? 'XX-FAKE' : get(data, 'gtm[0].fields.GTM');
+
+  const {
+    isOpen: isNewsLetterOpen,
+    onOpen: onOpenNewsletter,
+    onClose: onCloseNewsletter
+  } = useDisclosure({
+    defaultIsOpen: true
+  });
 
   return (
     <Box maxW="600px" m="0 auto" textAlign="center">
@@ -57,6 +64,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
         cardsData={cardsData}
         introSubtitle={introSubtitle}
         introMainTitle={introMainTitle}
+        onOpenNewsletter={onOpenNewsletter}
       />
 
       <Box p="15px 30px">
@@ -105,6 +113,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
           <ThumbsUpButton target="#thumbsup-button-home" w="100%" />
         </Button>
       </Center>
+
+      <Slide direction="bottom" in={isNewsLetterOpen} style={{ zIndex: 10 }}>
+        <Box
+          bgColor="#5D80A6"
+          bgSize="cover"
+          bgRepeat="no-repeat"
+          borderTopRadius="20px"
+          overflow="hidden">
+          <FloatingNewsletter
+            onClose={onCloseNewsletter}
+            newsletterData={emailCapture}
+            idAnalyticsName="Email-Capture-Popup"
+            idAnalyticsGroup="email-signup"
+          />
+        </Box>
+      </Slide>
 
       <Footer />
     </Box>
