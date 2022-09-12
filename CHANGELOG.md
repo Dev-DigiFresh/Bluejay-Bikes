@@ -1,3 +1,12 @@
+# [0.14.0](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/v0.13.0...v0.14.0) (2022-09-12)
+
+
+### Features
+
+* add floating newsletter ([#6](https://github.com/Dev-DigiFresh/Bluejay-Bikes/issues/6)) ([cb0ee9f](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/cb0ee9fbbf5b7309d6ff85cc19ea25e3139ac7e9))
+
+
+
 # [0.13.0](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/v0.12.0...v0.13.0) (2022-09-12)
 
 
@@ -31,15 +40,6 @@
 ### Bug Fixes
 
 * add right  way to set gtm url ([3e3d1cd](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/3e3d1cd887dbad788fc648cb1846ab6e7b9f0b2b))
-
-
-
-## [0.10.1](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/v0.10.0...v0.10.1) (2022-05-27)
-
-
-### Bug Fixes
-
-* remove console ([f749755](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/f7497559e8c9ca9ab15a76a6c66132cf2e745d7b))
 
 
 
