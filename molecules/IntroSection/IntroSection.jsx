@@ -1,13 +1,17 @@
 import { Flex, Text } from '@chakra-ui/react';
 import BikeCard from 'molecules/BikeCard';
 
-const IntroSection = ({ cardsData }) => (
+const IntroSection = ({
+  cardsData,
+  introSubtitle = 'Hello Newport',
+  introMainTitle = 'WE ARE IN YOUR CITY!'
+}) => (
   <Flex bgColor="#EBF0F6" flexDir="column" alignItems="center" p="25px 20px" w="100%">
     <Text variant="title" fontSize="18px">
-      Hello Newport
+      {introSubtitle}
     </Text>
     <Text variant="title" mb="65px">
-      WE ARE IN YOUR CITY!
+      {introMainTitle}
     </Text>
     <Flex justifyContent="center" gap="10px" w="100%">
       {cardsData.map(({ name, description, button, image }) => (
