@@ -12,7 +12,8 @@ export const buildNewportData = (data, pageIndex) => {
   const cards = get(data, 'cards');
   const collapseLinks = homeData['Quick Links'].map((links) => getDataFrom(brandLinks, links));
   const brandLinkAllProducts = brandLinks.find(({ fields }) => fields.Name === 'See All Products');
-  const cardsData = getCards(cards);
+  const currentCards = homeData['Cards'].map((card) => getDataFrom(cards, card));
+  const cardsData = getCards(currentCards);
   const getVideo = {
     title: homeData['Video Title'],
     url: homeData['Video URL']

@@ -2,17 +2,16 @@ const isEmpty = (obj) => !Object.keys(obj).length;
 
 const getCards = (cards) =>
   cards.reduce((acc, card) => {
-    const { fields } = card;
-    if (isEmpty(fields)) {
+    if (isEmpty(card)) {
       return [...acc];
     }
     const data = {
-      name: fields['Name'],
-      description: fields['Description'],
-      image: fields?.['Bike Image'][0].url,
+      name: card['Title'],
+      description: card['Description'],
+      image: card?.['Bike Image'][0].url,
       button: {
-        text: fields['Button Text'],
-        link: fields['Button URL']
+        text: card['Button Text'],
+        link: card['Button URL']
       }
     };
 

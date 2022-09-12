@@ -7,7 +7,7 @@ import Footer from 'digifresh.default-footer';
 
 import { useContext } from 'react';
 import { ThumbButtonContext, actions } from 'contexts/ThumbButtonContext';
-import { getHeader, buildNewportData } from 'helpers/buildHomeData';
+import { getHeader, buildNewportData, getIntro } from 'helpers/buildHomeData';
 import NewportHeader from 'organisms/Header/NewportHeader';
 import SocialSection from 'organisms/SocialSection';
 import CollapseButton from 'molecules/CollapseButton';
@@ -27,6 +27,8 @@ const Home = ({ data, pageIndex }) => {
 
   const { headerTitle, headerDescription, headerImage, headerButton, pageLogo } =
     getHeader(homeData);
+
+  const { introSubtitle, introMainTitle } = getIntro(homeData);
 
   const { disabled, handleThumbClick } = useContext(ThumbButtonContext);
   const thumbClick = () => handleThumbClick('home');
@@ -51,7 +53,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
         buttonContent={headerButton}
       />
 
-      <IntroSection cardsData={cardsData} />
+      <IntroSection
+        cardsData={cardsData}
+        introSubtitle={introSubtitle}
+        introMainTitle={introMainTitle}
+      />
 
       <Box p="15px 30px">
         <Text variant="title" mb="14px" fontSize="18px">
