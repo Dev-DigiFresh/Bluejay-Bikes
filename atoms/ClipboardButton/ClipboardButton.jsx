@@ -6,13 +6,14 @@ const ClipboardButton = ({ content, variant }) => {
 
   return (
     <Box position="relative">
-      {hasCopied && (
+      {!hasCopied && (
         <Box
           bgColor="#000"
           color="#FFF"
           position="absolute"
           top="0"
-          transform="translateY(-140%) translateX(135%)"
+          left="50%"
+          transform="translateY(-140%) translateX(-50%)"
           padding="5px 8px"
           borderRadius="5px"
           _after={{
