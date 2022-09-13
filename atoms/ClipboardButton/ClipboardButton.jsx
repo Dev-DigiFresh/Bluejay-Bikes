@@ -6,7 +6,7 @@ const ClipboardButton = ({ content, variant }) => {
 
   return (
     <Box position="relative">
-      {!hasCopied && (
+      {hasCopied && (
         <Box
           bgColor="#000"
           color="#FFF"
