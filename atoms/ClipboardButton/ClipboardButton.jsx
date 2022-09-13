@@ -12,7 +12,7 @@ const ClipboardButton = ({ content, variant }) => {
           color="#FFF"
           position="absolute"
           top="0"
-          transform="translateY(-140%) translateX(150%)"
+          transform="translateY(-140%) translateX(135%)"
           padding="5px 8px"
           borderRadius="5px"
           _after={{

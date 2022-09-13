@@ -6,7 +6,8 @@ const Newsletter = ({ newsletterData, idAnalyticsName, idAnalyticsGroup }) => {
 
   return (
     <Center
-      p={['60px', 'auto']}
+      py={['50px', 'auto']}
+      px={['20px', 'auto']}
       color="#fff"
       id-analytics-name={idAnalyticsName}
       id-analytics-group={idAnalyticsGroup}
