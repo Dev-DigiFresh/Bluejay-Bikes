@@ -1,3 +1,12 @@
+## [0.14.2](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/v0.14.1...v0.14.2) (2022-09-13)
+
+
+### Bug Fixes
+
+* clipboard message ([#9](https://github.com/Dev-DigiFresh/Bluejay-Bikes/issues/9)) ([937ffbc](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/937ffbca76292d368f65f5973d3d07e362006328))
+
+
+
 ## [0.14.1](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/v0.14.0...v0.14.1) (2022-09-13)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * create marin page ([#4](https://github.com/Dev-DigiFresh/Bluejay-Bikes/issues/4)) ([d560d9e](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/d560d9ee8d6f3762c2251354aa8928b6f475a756))
-
-
-
-# [0.11.0](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/v0.10.2...v0.11.0) (2022-05-28)
-
-
-### Features
-
-* add newport api to deploy file ([e08ac75](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/e08ac75890adcd8cb9f23316d32f6ec4dc8bd610))
 
 
 
