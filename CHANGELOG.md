@@ -1,3 +1,12 @@
+## [0.14.1](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/v0.14.0...v0.14.1) (2022-09-13)
+
+
+### Bug Fixes
+
+* adjust alignment in newsletter block ([#7](https://github.com/Dev-DigiFresh/Bluejay-Bikes/issues/7)) ([eed85b5](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/eed85b50a7e468406148f9183a20b488b84e7fb3))
+
+
+
 # [0.14.0](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/v0.13.0...v0.14.0) (2022-09-12)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * add newport api to deploy file ([e08ac75](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/e08ac75890adcd8cb9f23316d32f6ec4dc8bd610))
-
-
-
-## [0.10.2](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/v0.10.1...v0.10.2) (2022-05-28)
-
-
-### Bug Fixes
-
-* add right  way to set gtm url ([3e3d1cd](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/3e3d1cd887dbad788fc648cb1846ab6e7b9f0b2b))
 
 
 
