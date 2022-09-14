@@ -3,7 +3,18 @@ const popUp = "LET'S GO";
 
 const BikeCard = ({ title, description, button, image, onOpenNewsletter }) => {
   const buttonProps =
-    button.text === popUp ? { onClick: onOpenNewsletter } : { href: button.link, target: '_blank' };
+    button.text === popUp
+      ? {
+          onClick: onOpenNewsletter,
+          'id-analytics-name': 'Email-Popup-Button',
+          'id-analytics-group': 'email-popup'
+        }
+      : {
+          href: button.link,
+          target: '_blank',
+          'id-analytics-name': 'Shop-Button',
+          'id-analytics-group': 'external'
+        };
 
   return (
     <Box w="183px" h="215px" bg="#fff" pos="relative" pt="45px" pb="21px">
