@@ -1,3 +1,12 @@
+## [0.14.4](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/v0.14.3...v0.14.4) (2022-09-14)
+
+
+### Bug Fixes
+
+* analytics id ([#11](https://github.com/Dev-DigiFresh/Bluejay-Bikes/issues/11)) ([da22f52](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/da22f5272e788f411458b38e75731ab83e0351f1))
+
+
+
 ## [0.14.3](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/v0.14.2...v0.14.3) (2022-09-14)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * add floating newsletter ([#6](https://github.com/Dev-DigiFresh/Bluejay-Bikes/issues/6)) ([cb0ee9f](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/cb0ee9fbbf5b7309d6ff85cc19ea25e3139ac7e9))
-
-
-
-# [0.13.0](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/v0.12.0...v0.13.0) (2022-09-12)
-
-
-### Features
-
-* add data dynamically ([#5](https://github.com/Dev-DigiFresh/Bluejay-Bikes/issues/5)) ([0cbf398](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/0cbf398b0ac54ce6cc37eb74bd78e57c3aed83e0))
 
 
 
