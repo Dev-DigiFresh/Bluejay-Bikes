@@ -1,3 +1,12 @@
+## [0.14.3](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/v0.14.2...v0.14.3) (2022-09-14)
+
+
+### Bug Fixes
+
+* header logo position ([#10](https://github.com/Dev-DigiFresh/Bluejay-Bikes/issues/10)) ([2963d9c](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/2963d9cfc9838b754825c406b5495d13051cf94a))
+
+
+
 ## [0.14.2](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/v0.14.1...v0.14.2) (2022-09-13)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * add data dynamically ([#5](https://github.com/Dev-DigiFresh/Bluejay-Bikes/issues/5)) ([0cbf398](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/0cbf398b0ac54ce6cc37eb74bd78e57c3aed83e0))
-
-
-
-# [0.12.0](https://github.com/Dev-DigiFresh/Bluejay-Bikes/compare/v0.11.0...v0.12.0) (2022-09-10)
-
-
-### Features
-
-* create marin page ([#4](https://github.com/Dev-DigiFresh/Bluejay-Bikes/issues/4)) ([d560d9e](https://github.com/Dev-DigiFresh/Bluejay-Bikes/commit/d560d9ee8d6f3762c2251354aa8928b6f475a756))
 
 
 
