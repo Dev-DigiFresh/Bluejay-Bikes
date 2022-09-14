@@ -29,7 +29,11 @@ const ClipboardButton = ({ content, variant }) => {
           <Text fontSize="14px">Copied</Text>
         </Box>
       )}
-      <Button onClick={onCopy} variant={variant}>
+      <Button
+        onClick={onCopy}
+        variant={variant}
+        id-analytics-name="Email-Capture-Popup"
+        id-analytics-group="email-signup">
         {content}
       </Button>
     </Box>
