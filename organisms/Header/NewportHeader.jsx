@@ -20,7 +20,7 @@ const NewportHeader = ({ title, background, logo, description, officialSite }) =
           <ShareIcon />
         </Box>
         <a href={officialSite} className="ue" target="_blank" rel="noopener noreferrer">
-          <Image w="229px" h="104px" src={logo} />
+          <Image w="229px" h="104px" src={logo} transform="translateY(-25px)" />
         </a>
         {title && (
           <Text color="brand.secondary" variant="title" mt="15px" mb="10px" fontWeight="bold">
